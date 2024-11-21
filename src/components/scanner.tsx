@@ -1,7 +1,7 @@
 import { QrReader } from "react-qr-reader"
 import { DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "./ui/drawer"
 import { Button } from "./ui/button"
-import { ReactNode, useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const Scanner = () => {
   const btnRef = useRef(null)

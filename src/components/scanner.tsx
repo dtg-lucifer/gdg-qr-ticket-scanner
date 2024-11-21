@@ -1,17 +1,24 @@
 import { QrReader } from "react-qr-reader"
 import { DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "./ui/drawer"
 import { Button } from "./ui/button"
-import { useEffect, useRef, useState } from "react"
+import { ReactNode, useEffect, useRef, useState } from "react"
 
 const Scanner = () => {
   const btnRef = useRef(null)
   const [res, setRes] = useState("")
   const [success, setSuccess] = useState(false)
+  const [data, setData] = useState<Record<string, string> | null>(null)
 
   useEffect(() => {
     // @ts-ignore
     if (success) btnRef.current.click()
-    if (!!res) console.log(JSON.parse(res))
+    if (!!res) {
+      try {
+        setData(JSON.parse(res))
+      } catch (e) {
+        alert("Error parsing the QR, make sure that the QR is valid")
+      }
+    }
   }, [success])
 
   return (
@@ -39,7 +46,7 @@ const Scanner = () => {
       </DrawerHeader>
       <DrawerFooter className="px-[3.5rem]">
         <pre>
-          {!!res && JSON.parse(res)}
+          {data ? data : JSON.parse("{}")}
         </pre>
         <DrawerClose>
           <Button onClick={() => setSuccess(false)} variant="default">Okay</Button>

@@ -17,6 +17,7 @@ const Scanner = () => {
         setData(JSON.parse(res))
       } catch (e) {
         alert("Error parsing the QR, make sure that the QR is valid")
+        window.location.reload()
       }
     }
   }, [success])

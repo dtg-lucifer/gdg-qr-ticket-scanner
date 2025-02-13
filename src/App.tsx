@@ -1,13 +1,7 @@
-import {Scanner} from "./components/scanner"
-import { Drawer } from "./components/ui/drawer"
+import { Scanner } from "./components/scanner";
 
 function App() {
-
-  return (
-    <Drawer>
-        <Scanner />
-    </Drawer>
-  )
+  return <Scanner />;
 }
 
-export default App
+export default App;

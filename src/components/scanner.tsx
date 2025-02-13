@@ -29,7 +29,7 @@ const Scanner = () => {
   }, [success, res]);
 
   return (
-    <Dialog>
+    <Dialog onOpenChange={(open) => !open && window.location.reload()}>
       <DialogTrigger ref={btnRef} hidden></DialogTrigger>
       <QrReader
         scanDelay={50}

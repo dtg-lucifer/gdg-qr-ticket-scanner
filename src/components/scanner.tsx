@@ -32,7 +32,7 @@ const Scanner = () => {
     <Dialog>
       <DialogTrigger ref={btnRef} hidden></DialogTrigger>
       <QrReader
-        scanDelay={1000}
+        scanDelay={50}
         constraints={{ facingMode: "environment" }}
         onResult={(r, e) => {
           if (r !== null && r !== undefined) {
@@ -46,6 +46,7 @@ const Scanner = () => {
         videoStyle={{ width: "100dvw", height: "100dvh" }}
         videoContainerStyle={{ width: "100dvw", height: "100dvh" }}
       />
+      <p className="text-2xl text-center">Scan the QR Code</p>
       <DialogContent>
         <DialogHeader>
           {/* <DialogTitle>Success !!</DialogTitle> */}

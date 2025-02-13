@@ -1,14 +1,10 @@
 import { QrReader } from "react-qr-reader";
-import { Button } from "./ui/button";
 import { useEffect, useRef, useState } from "react";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
 
